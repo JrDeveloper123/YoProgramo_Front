@@ -1,0 +1,42 @@
+
+<div class="row" id="rowExperiencia">
+        
+    <div id="exp" class="container  mb-5 mt-5" >
+      <div class="conteiner-fluid " > 
+
+        <div class="conteiner-fluid " > 
+          <h3><strong>Experiencia</strong></h3>
+          <div class="accordion m-3 mb-4" id="accordionPanelsStayOpenExample">
+            <div *ngFor="let experiencia of experiencias" class="accordion-item ">
+              <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
+                  <strong>{{experiencia.company}}</strong>
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
+                <div class="accordion-body">
+                  <p><strong>Empresa: {{experiencia.company}}</strong></p>
+                  <p><strong>Posición: </strong>{{experiencia.position}} </p>
+                  <p><strong>Descripción: </strong>{{experiencia.description}} </p>
+                  <p><strong>Desde:</strong> {{experiencia.entry}}<strong> Hasta:  </strong> {{experiencia.discharge}} </p>
+                </div>
+                <div  class=" d-grid gap-1 d-md-flex justify-content-md-end">            
+              <div class = "mt-2"*ngIf="isAdmin"><button class="btn btn-outline-warning" routerLink="/editarExperiencia/{{experiencia.experienceId}}"><i class="far fa-edit"></i> Editar</button></div>
+              <div class= "mt-2"*ngIf="isAdmin"><button class="btn btn-outline-danger" (click)="borrar(experiencia.experienceId)"><i class="far fa-trash-alt"></i> Eliminar</button></div>
+  
+                </div>
+    
+                   
+                </div>
+              </div>
+
+
+            </div>
+ <div class="mt-3" *ngIf="isAdmin">
+          <button class="btn btn-outline-success btn-lg" routerLink="/nuevoExperiencia">
+            <i class="fas fa-plus-circle"></i> Nueva Experiencia</button>
+        </div>
+
+          </div>
+    </div>
+  

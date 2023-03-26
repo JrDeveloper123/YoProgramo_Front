@@ -1,0 +1,33 @@
+<div class="row" id="row">
+    <div id="banner" class="container mb-5 mt-5">
+        <div class="container-fluid mb-5 mt-5 ">
+            <div class="row" id="box-search">
+                <div class="thumbnail text-center">
+                    <img [src]="imagen.backImage" id="imagen">
+                    <div class="caption" id="caption2">
+                        <div class="card" style=" width: 13rem;background-color: rgb(205, 238, 16);">
+                            <div class="card-body">
+                                <p class="card-text ">{{persona.degree}}</p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="caption" id="caption1">
+                        <div class="card" style=" width: 13rem;background-color: rgb(241, 237, 13);">
+                            <img [src]="imagen.profile" class="img-rounded img-fluid" alt="...">
+                            <div class="card-body">
+                                <h2>{{persona.name}} {{persona.surname}}</h2>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class = "mt-2"*ngIf="isAdmin"><button class="btn btn-outline-warning" routerLink="/editarImagen/{{persona.personId}}"><i class="far fa-edit"></i> Editar Imagenes</button></div>
+                </div>
+             
+            </div>
+
+      
+        </div>
+    </div>
+</div>

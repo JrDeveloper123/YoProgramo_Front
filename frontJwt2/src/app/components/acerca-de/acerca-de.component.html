@@ -1,0 +1,32 @@
+
+<div class="row" id="acerca">
+    <div id="acerca" class="container mb-5 mt-5">
+      <div class="conteiner-fluid">
+        <h3><strong>Acerca de...</strong></h3>
+  
+        <div class="container">
+          <div class="row">
+            <div class="col align-self-start">
+              <div class="mat-card bg-light">
+                <span>
+                  <p class="m-3">{{ persona.about }}</p>
+                </span>
+              </div>
+            </div>
+            <div class="col align-self-end">
+              <h3><strong>Contacto</strong></h3>
+              <div class="mat-card bg-light">
+                <h5 class="card-title">Domicilio</h5>
+                <p class="card-text m-3">{{ persona.address }}</p>
+                <h5 class="card-title">Telefono</h5>
+                <p class="card-text m-3">{{ persona.phone }}</p>
+                <h5 class="card-title">Correo</h5>
+                <p class="card-text m-3">{{ persona.mail }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class = "mt-2"*ngIf="isAdmin"><button class="btn btn-outline-warning" routerLink="/editarPersona/{{persona.personId}}"><i class="far fa-edit"></i> Editar Persona</button></div>
+      </div>
+    </div>
+</div>

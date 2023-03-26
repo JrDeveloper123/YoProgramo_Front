@@ -1,0 +1,50 @@
+<app-menu></app-menu>
+<div class="container" *ngIf="persona">
+    <div class="row mt-5">
+        <div class="col-md-4 mx-auto">
+            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" class="form-control" id="name" name="name"
+                    [(ngModel)]="persona.name" required>
+                </div>
+                <div class="form-group">
+                    <label for="surname">Apellido</label>
+                    <input type="text" class="form-control" id="surname" name="surname"
+                    [(ngModel)]="persona.surname" required>
+                </div>
+                <div class="form-group">
+                    <label for="mail"> eMail</label>
+                    <input type="text" class="form-control" id="mail" name="mail"
+                    [(ngModel)]="persona.mail">
+                </div>
+                <div class="form-group">
+                    <label for="about">Acerca de</label>
+                    <input type="text" class="form-control" id="about" name="about"
+                    [(ngModel)]="persona.about">
+                </div>
+                <div class="form-group">
+                    <label for="degree">Titulo</label>
+                    <input type="text" class="form-control" id="degree" name="degree"
+                    [(ngModel)]="persona.degree">
+                </div>
+               
+                <div class="form-group">
+                    <label for="address">Direccion</label>
+                    <input type="text" class="form-control" id="address" name="address"
+                    [(ngModel)]="persona.address">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Telefono</label>
+                    <input type="text" class="form-control" id="phone" name="phone"
+                    [(ngModel)]="persona.phone">
+                </div>
+                <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">
+                    <i class="fas fa-pencil-alt"></i> Actualizar</button>
+                <button class="btn btn-outline-primary btn-block" routerLink="/portfolio">
+                    <i class="fas fa-arrow-alt-circle-left"></i> Volver</button>
+            </form>
+        </div>
+    </div>
+</div>
+

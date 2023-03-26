@@ -1,0 +1,66 @@
+
+ 
+<div class="row" id="rowHabilidad">
+  
+    <div id="estud" class="container  mb-5 mt-5">
+      <div class="conteiner-fluid ">
+        <h3><strong>Educación</strong></h3>
+        <div class="accordion m-3 mb-4" id="accordionPanelsStayOpenExample">
+          <div *ngFor="let educacion of estudios" class="accordion-item ">
+            <h2 class="accordion-header" id="panelsStayOpen-headingTen">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseTen" aria-expanded="false"
+                aria-controls="panelsStayOpen-collapseTen">
+                <strong>{{educacion.degree}}</strong>
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseTen" class="accordion-collapse collapse"
+              aria-labelledby="panelsStayOpen-headingTen">
+              <div class="accordion-body">
+
+                <div class="card" style="width: 70rem;">
+                  <div class="container">
+                    <div class="row  m-3">
+                      
+
+                     
+                        <div class="col-3 ">
+                          <a href="{{educacion.urlInstitution}}">
+                          <img src="{{educacion.image}}" class="card-img-top" style="width:160px;height:160px;"alt="...">
+                      </a>
+                      </div>
+                       
+                      
+                      
+                      
+                      <div class="col-9">  <p><strong>Institución: {{educacion.institution}}</strong></p> <p><strong>Titulación: </strong>{{educacion.degree}} </p>
+                        <p><strong>Desde:</strong> {{educacion.entry}}<strong> Hasta: </strong> {{educacion.discharge}}</p>                                                    </div>
+                    </div>
+                  </div>
+
+                
+                </div>
+
+
+
+
+
+
+                
+              </div>
+              <div  class=" d-grid gap-1 d-md-flex justify-content-md-end">        
+              <div class = "mt-2"*ngIf="isAdmin"><button class="btn btn-outline-warning" routerLink="/editarEducacion/{{educacion.educationId}}"><i class="far fa-edit"></i> Editar</button></div>
+              <div class= "mt-2"*ngIf="isAdmin"><button class="btn btn-outline-danger" (click)="borrar(educacion.educationId)"><i class="far fa-trash-alt"></i> Eliminar</button></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br />
+        <div class="mt-3" *ngIf="isAdmin">
+          <button class="btn btn-outline-success btn-lg" routerLink="/nuevoEducacion">
+            <i class="fas fa-plus-circle"></i> Nuevo Estudio</button>
+        </div>
+      </div>
+    </div>>
+  
+  

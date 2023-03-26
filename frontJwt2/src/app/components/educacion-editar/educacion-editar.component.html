@@ -1,0 +1,43 @@
+<app-menu></app-menu>
+<div class="container" *ngIf="estudio">
+    <div class="row mt-5">
+        <div class="col-md-4 mx-auto">
+            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="institution">Institucion</label>
+                    <input type="text" class="form-control" id="institution" name="institution"
+                    [(ngModel)]="estudio.institution" required>
+                </div>
+                <div class="form-group">
+                    <label for="degree">Titulo</label>
+                    <input type="text" class="form-control" id="degree" name="degree"
+                    [(ngModel)]="estudio.degree" required>
+                </div>
+                <div class="form-group">
+                    <label for="entry"> Desde </label>
+                    <input type="text" class="form-control" id="entry" name="entry"
+                    [(ngModel)]="estudio.entry">
+                </div>
+                <div class="form-group">
+                    <label for="discharge">Hasta</label>
+                    <input type="text" class="form-control" id="discharge" name="discharge"
+                    [(ngModel)]="estudio.discharge">
+                </div>
+                <div class="form-group">
+                    <label for="urlInstitution">Url Institución</label>
+                    <input type="text" class="form-control" id="urlInstitution" name="urlInstitution"
+                    [(ngModel)]="estudio.urlInstitution">
+                </div>
+                <div class="form-group">
+                    <label for="image">Imagen Institución</label>
+                    <input type="text" class="form-control" id="image" name="image"
+                    [(ngModel)]="estudio.image">
+                </div>
+                <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">
+                    <i class="fas fa-pencil-alt"></i> Actualizar</button>
+                <button class="btn btn-outline-primary btn-block" routerLink="/portfolio">
+                    <i class="fas fa-arrow-alt-circle-left"></i> Volver</button>
+            </form>
+        </div>
+    </div>
+</div>
